@@ -3,7 +3,7 @@ const path  =require('path');
 const db = require('./data/database');
 
 
-const baseRoutes = require('./routes/base.routes');
+const productsRoutes = require('./routes/products.routes')
 
 
 const app = express();
@@ -11,7 +11,8 @@ const app = express();
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 app.use(express.static('public')) ;
-app.use(baseRoutes);
+app.use(productsRoutes);
+
 
 
 db.connectToDb().then(function(){

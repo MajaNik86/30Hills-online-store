@@ -19,6 +19,17 @@
             <p class="section-text-p1">Browse</p>
             <h1 class="title">The Shop</h1>
           </div>
+          <h1>Product List</h1>
+
+  <ul id="products-grid">
+    <% products.forEach(product => { %>
+      <li>
+        <h2><%= product.name %></h2>
+        <p><%= product.description %></p>
+        <p>Price: $<%= product.price %></p>
+      </li>
+    <% }); %>
+  </ul>
     </main>
 </body>
 </html>
