@@ -51,6 +51,10 @@ class Product {
   
     return product;
   }
+
+  parsePrice() {
+    return parseFloat(this.price);
+  }
   
 }
 
