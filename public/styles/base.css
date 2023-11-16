@@ -19,6 +19,9 @@ html {
     color: var(--color-gray-500);
   
   }
+  li{
+    list-style: none;
+  }
   
   #main-header {
     display: flex;

@@ -3,7 +3,6 @@ const Product = require('../models/Product.model');
 
 async function insertInitialData(req,res){
 
-
 const productsData = {
     items: [
         {
@@ -1039,4 +1038,15 @@ const productsData = {
   }
 }
 
-module.exports={insertInitialData}
+
+async function getProductsDetails(req, res, next) {
+  try {
+    const product = await Product.findById(req.params.id);
+    res.render('product-details', { product: product });
+    console.log(product);
+  } catch (error) {
+    return next(error);
+  }
+}
+
+module.exports={insertInitialData , getProductsDetails}

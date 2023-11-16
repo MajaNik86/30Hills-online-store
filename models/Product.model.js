@@ -36,6 +36,22 @@ class Product {
       console.error('Error inserting products:', error);
     }
   }
+
+  static async findById(productId) {
+    const product = await db
+      .getDb()
+      .collection("products")
+      .findOne({ id: productId });
+  
+    if (!product) {
+      const error = new Error("Could not find product with provided id.");
+      error.code = 404;
+      throw error;
+    }
+  
+    return product;
+  }
+  
 }
 
 module.exports = Product;
