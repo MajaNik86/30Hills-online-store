@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/products.css" />
+    <title>Your Cart</title>
+  </head>
+  <body>
+    <%-include('./componants/header')%>
+    <main>
+      <div class="section-intro">
+        <p class="section-text-p1">Browse</p>
+        <h1 class="title">Your Cart</h1>
+      </div>
+      <ul id="cart-items">
+       <% for(const cartItem of locals.cart.items) {%>
+        <li>
+          <%-include('componants/cart-item' ,{item:cartItem})%>
+        </li>
+        <%}%>
+      </ul>
+      <div id="cart-total">
+
+        <p>Total:$ <span id="cart-total-price"> <%=locals.cart.totalPrice%></span></p>
+
+        <button class="btn">Buy Products</button>
+      </div>
+      <script src="/scripts/cart-item-management.js"></script>
+    </main>
+  </body>
+</html>

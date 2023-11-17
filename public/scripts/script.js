@@ -25,3 +25,4 @@ function sortProductsByPrice() {
 }
 
 sortButton.addEventListener('click', sortProductsByPrice);
+

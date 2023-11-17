@@ -9,7 +9,7 @@
   </head>
   <body>
     <% console.log(product); %>
-    <%-include('./shared/header')%>
+    <%-include('./componants/header')%>
     <main id="product-details">
         <% if (product.images && product.images.length > 0) { %>
           <img src="<%= product.images[0] %>" alt="<%= product.name %> Image" />
@@ -19,10 +19,11 @@
         <div id="product-info">
           <h1><%= product.name %></h1>
           <p>$<%= product.price %></p>
-          <button class="btn btn-alt" data-productid="<%= product.id %>">Add to cart</button>
+          <button class="btn btn-alt" id="add-to-cart-btn" data-productid="<%= product.id %>">Add to cart</button>
         </div>
       <p id="product-description"><%= product.description %></p>
       <a href="/">Back to shop</a>
     </main>
+    <script src="/scripts/cart-management.js"></script>
   </body>
 </html>

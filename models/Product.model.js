@@ -1,6 +1,7 @@
 const db = require("../data/database");
 const mongodb = require("mongodb");
 
+
 class Product {
   constructor(
     id,
@@ -18,7 +19,7 @@ class Product {
     this.name = name;
     this.description = description;
     this.features = features;
-    this.price = price;
+    this.price =price;
     this.keywords = keywords;
     this.url = url;
     this.category = category;
@@ -55,6 +56,8 @@ class Product {
   parsePrice() {
     return parseFloat(this.price);
   }
+
+
   
 }
 
